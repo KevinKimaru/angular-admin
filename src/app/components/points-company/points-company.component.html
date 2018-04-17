@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <h1 class="jumbotron">
+    Points, Companies
+  </h1>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <app-cpoints-company></app-cpoints-company>
+  </div>
+  <div class="col-sm-8">
+    <app-points-company-list></app-points-company-list>
+  </div>
+</div>
+<br>
+<hr>
+<div class="col-sm-8" *ngIf="pointsCompanyService.selectedPointsCompany.id">
+  <app-points-company-details></app-points-company-details>
+</div>

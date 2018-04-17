@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <h1 class="jumbotron">
+    Stories
+  </h1>
+</div>
+<div class="row">
+  <div class="col-sm-3">
+    <app-cstory></app-cstory>
+  </div>
+  <div class="col-sm-9">
+    <app-story-list></app-story-list>
+  </div>
+</div>
+<br>
+<hr>
+<div class="col-sm-8" *ngIf="storyService.selectedStory.id">
+  <app-story-details></app-story-details>
+</div>

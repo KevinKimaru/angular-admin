@@ -1,0 +1,36 @@
+<h2 class="text-center text-success">All Donations</h2>
+<table datatable class="table table-sm table-hover" id="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Donor</th>
+      <th>Story</th>
+      <th>Amount</th>
+      <th>Matched Amount</th>
+      <th>Type</th>
+      <th>Points Company</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let donation of donationService.donationList">
+      <td>{{donation?.id}}</td>
+      <td>{{donation?.dateAdded}}</td>
+      <td>{{donation?.donor?.firstName}} {{donation?.donor?.lastName}}</td>
+      <td><textarea class="form-control" name="" id="" cols="100" rows="2" readonly>{{donation?.story?.description}}</textarea></td>
+      <td>{{donation?.amount}}</td>
+      <td>{{donation?.matchedAmount}}</td>
+      <td>{{donation?.type}}</td>
+      <td>{{donation?.pointsCompany?.name}}</td>
+      <td>
+        <a class="btn text-info" (click)="showForEdit(donation)">
+          <i class="fa fa-pencil-square-o"></i>Edit
+        </a>
+        <a class="btn text-danger" (click)="onDelete(donation.id)">
+          <i class="fa fa-trash-o"></i>Delete
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

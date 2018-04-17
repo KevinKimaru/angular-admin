@@ -1,0 +1,33 @@
+<h2 class="text-center text-success">Update Donor's Details</h2>
+<form class="" #donorForm="ngForm" (ngSubmit)="onSubmit(donorForm)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="donorService.currentDonor.id">
+  <div class="form-group">
+    <input class="form-control" required name="firstName" #firstName="ngModel" [(ngModel)]="donorService.currentDonor.firstName" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" required name="lastName" #lastName="ngModel" [(ngModel)]="donorService.currentDonor.lastName" placeholder="Last Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="email" required name="email" #email="ngModel" [(ngModel)]="donorService.currentDonor.email" placeholder="email">
+  </div>
+  <div class="form-group">
+    <input class="form-control" required name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="donorService.currentDonor.phoneNumber" placeholder="Phone Number">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="date" required name="dateOfBirth" #dateOfBirth="ngModel" [(ngModel)]="donorService.currentDonor.dateOfBirth"
+      placeholder="Date of Birth">
+  </div>
+  <div class="form-group">
+    <input class="form-control" required name="username" #username="ngModel" [(ngModel)]="donorService.currentDonor.username" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <select class="form-control" required name="gender" #gender="ngModel" [(ngModel)]="donorService.currentDonor.gender" placeholder="Gender">
+      <option value="0">Female</option>
+      <option value="1">Male</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button  class="btn-sm btn-info btn-block" type="submit">
+      <i class="fa fa-floppy-o"></i>Submit</button>
+  </div>
+</form>

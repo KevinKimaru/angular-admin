@@ -1,0 +1,38 @@
+<div *ngIf="storyService.selectedStory.id; then update else add"></div>
+<ng-template #add>
+  <h2 class="text-center text-success">Add Story</h2>
+</ng-template>
+<ng-template #update>
+  <h2 class="text-center text-success">Update Story</h2>
+</ng-template>
+
+<form class="" #storyForm="ngForm" (ngSubmit)="onSubmit(storyForm)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="storyService.selectedStory.id">
+  <div class="form-group">
+    <textarea rows="5" class="form-control" required name="description" #description="ngModel" [(ngModel)]="storyService.selectedStory.description"
+      placeholder="Description">
+    </textarea>
+  </div>
+  <div class="form-group">
+    <label for="organisation">Organisation</label>
+    <select id="organisation" class="form-control" required name="organisation" #organisation="ngModel" [(ngModel)]="storyService.selectedStoryOrganisationId" placeholder="Organisation">
+      <option *ngFor="let organisation of organisationService.organisationList" value="{{organisation?.id}}">{{organisation?.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input class="form-control"  type="number" required name="targetAmount" #targetAmount="ngModel" [(ngModel)]="storyService.selectedStory.targetAmount"
+      placeholder="Target Amount">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="number" required name="timeAllocated" #timeAllocated="ngModel" [(ngModel)]="storyService.selectedStory.timeAllocated"
+      placeholder="Time Allocated(Days)">
+  </div>
+  <div class="form-group">
+    <button  class="btn-sm btn-primary btn-info btn-block" type="submit">
+      <i class="fa fa-floppy-o"></i>Submit</button>
+  </div>
+  <div class="form-group">
+    <button class="btn-sm btn-block" type="button" (click)="resetForm(storyForm)">
+      <i class="fa fa-repeat"></i>Reset</button>
+  </div>
+</form>

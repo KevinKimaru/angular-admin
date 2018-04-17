@@ -1,0 +1,41 @@
+<h2 class="text-center text-success">{{pointsCompanyService.selectedPointsCompany.name}} Details</h2>
+<table>
+  <tr>
+    <td>
+      <strong>Name: </strong>
+    </td>
+    <td>{{pointsCompanyService.selectedPointsCompany.name}}</td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Date added: </strong>
+    </td>
+    <td>{{pointsCompanyService.selectedPointsCompany.dateAdded}}</td>
+  </tr>
+</table>
+<hr>
+<h3 class="text-center text-info">Donations through {{pointsCompanyService.selectedPointsCompany.name}}</h3>
+<table class="table table-sm table-hover">
+  <thead>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Donor</th>
+    <th>Story</th>
+    <th>Amount</th>
+    <th>Matched Amount</th>
+    <th>Type</th>
+    <th>Points Company</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let donation of pointsCompanyService.selectedPointsCompany?.donations">
+      <td>{{donation?.id}}</td>
+      <td>{{donation?.dateAdded}}</td>
+      <td>{{donation?.donor?.firstName}} {{donation?.donor?.lastName}}</td>
+      <td>{{donation?.story?.description}}</td>
+      <td>{{donation?.amount}}</td>
+      <td>{{donation?.matchedAmount}}</td>
+      <td>{{donation?.type}}</td>
+      <td>{{donation?.pointsCompany?.name}}</td>
+    </tr>
+  </tbody>
+</table>

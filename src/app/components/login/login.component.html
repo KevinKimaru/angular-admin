@@ -1,0 +1,17 @@
+<div class="alert alert-danger col-sm-8" *ngIf="isLoginError">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Error!</strong>Wrong username or password
+</div>
+<div class="col-sm-8 col-sm-offset-2">
+  <form role="form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="form-group">
+      <label for="email">Username:</label>
+      <input name="username" #username ngModel required type="text" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input name="password" #password ngModel required type="password" class="form-control" id="pwd">
+    </div>
+    <button [disabled]="!loginForm.valid" type="submit" class="btn btn-default">Login</button>
+  </form>
+</div>

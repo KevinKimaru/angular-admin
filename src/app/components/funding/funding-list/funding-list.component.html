@@ -1,0 +1,30 @@
+<h2 class="text-center text-success">All Brand Contributions</h2>
+<table class="table table-sm table-hover" id="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Brand</th>
+      <th>Placed Amount</th>
+      <th>Current Amount</th>
+      <th>Ratio</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let funding of fundingService.fundingList">
+      <td>{{funding?.id}}</td>
+      <td>{{funding?.brand?.name}}</td>
+      <td>{{funding?.placedAmount}}</td>
+      <td>{{funding?.currentAmount}}</td>
+      <td>{{funding?.ratio}}</td>
+      <td>
+        <a class="btn" (click)="showForEdit(funding)">
+          <i class="fa fa-pencil-square-o"></i>Edit
+        </a>
+        <a class="btn text-danger" (click)="onDelete(funding.id)">
+          <i class="fa fa-trash-o"></i>Delete
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

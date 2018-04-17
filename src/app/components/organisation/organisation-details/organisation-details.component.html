@@ -1,0 +1,36 @@
+<h2 class="text-center text-success">{{organisationService.selectedOrganisation.name}} Details</h2>
+<table>
+  <tr>
+    <td><strong>Name: </strong></td>
+    <td>{{organisationService.selectedOrganisation.name}}</td>
+  </tr>
+  <tr>
+      <td><strong>Description: </strong></td>
+      <td>{{organisationService.selectedOrganisation.description}}</td>
+    </tr>
+</table>
+<hr>
+<h3 class="text-center text-info">Stories</h3>
+<table class="table table-sm table-hover">
+  <thead>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Target Amount</th>
+    <th>Current Amount</th>
+    <th>Date added</th>
+    <th>Time Allocated</th>
+    <th>Status</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let story of organisationService.selectedOrganisation?.stories">
+      <td>{{story?.id}}</td>
+      <td>{{story?.description}}</td>
+      <td>{{story?.targetAmount}}</td>
+      <td>{{story?.currentAmount}}</td>
+      <td>{{story?.dateAdded}}</td>
+      <td>{{story?.timeAllocated}}</td>
+      <td>{{story?.status}}</td>
+      <td>{{story?.Edit}}</td>
+    </tr>
+  </tbody>
+</table>

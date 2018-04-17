@@ -1,0 +1,84 @@
+<h2 class="text-center text-success">Story details</h2>
+  <div class="row">
+    <div class="col-sm-3">
+      <app-form-upload></app-form-upload>
+    </div>
+    <div class="col-sm-9">
+      <app-list-upload></app-list-upload>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <table>
+      <tr>
+        <td>
+          <strong>Organisation: </strong>
+        </td>
+        <td>{{storyService.selectedStory?.organisation?.name}}</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Description: </strong>
+        </td>
+        <td>{{storyService.selectedStory?.description}}</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Target Amount: </strong>
+        </td>
+        <td>{{storyService.selectedStory?.targetAmount}}</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Current Amount: </strong>
+        </td>
+        <td>{{storyService.selectedStory?.currentAmount}}</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Time Allocated: </strong>
+        </td>
+        <td>{{storyService.selectedStory?.timeAllocated}}</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Date added: </strong>
+        </td>
+        <td>{{storyService.selectedStory?.dateAdded}}</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Status: </strong>
+        </td>
+        <td>{{storyService.selectedStory?.status}}</td>
+      </tr>
+    </table>
+    <hr>
+    <div>
+      <h3 class="text-center text-info">Donations</h3>
+      <table class="table table-sm table-hover">
+        <thead>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Donor</th>
+          <th>Story</th>
+          <th>Amount</th>
+          <th>Matched Amount</th>
+          <th>Type</th>
+          <th>Points Company</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let donation of storyService.selectedStory?.donations">
+            <td>{{donation?.id}}</td>
+            <td>{{donation?.dateAdded}}</td>
+            <td>{{donation?.donor?.firstName}} {{donation?.donor?.lastName}}</td>
+            <td>{{donation?.story?.description}}</td>
+            <td>{{donation?.amount}}</td>
+            <td>{{donation?.matchedAmount}}</td>
+            <td>{{donation?.type}}</td>
+            <td>{{donation?.pointsCompany?.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

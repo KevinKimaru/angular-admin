@@ -1,0 +1,23 @@
+<div *ngIf="organisationService.selectedOrganisation.id; then update else add"></div>
+<ng-template #add><h2 class="text-center text-success">Add Organisation</h2></ng-template>
+<ng-template #update> <h2 class="text-center text-success">Update Organisation Details</h2></ng-template>
+
+
+<form class="" #orgForm="ngForm" (ngSubmit)="onSubmit(orgForm)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="organisationService.selectedOrganisation.id">
+  <div class="form-group">
+    <input class="form-control" required name="name" #name="ngModel" [(ngModel)]="organisationService.selectedOrganisation.name" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <textarea rows="5" class="form-control"  name="description" #description="ngModel" [(ngModel)]="organisationService.selectedOrganisation.description" placeholder="Description">
+      </textarea>
+  </div>
+  <div class="form-group">
+    <button [disabled]="!orgForm.valid" class="btn-sm btn-info btn-block" type="submit">
+      <i class="fa fa-floppy-o"></i>Submit</button>
+  </div>
+  <div class="form-group">
+    <button class="btn-sm btn-seconadry btn-block" type="button" (click)="resetForm(orgForm)">
+      <i class="fa fa-repeat"></i>Reset</button>
+  </div>
+</form>

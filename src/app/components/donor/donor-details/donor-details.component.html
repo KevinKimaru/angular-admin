@@ -1,0 +1,74 @@
+<h2 class="text-center text-success">Donor Details</h2>
+<table>
+  <tr>
+    <td>
+      <strong>First Name: </strong>
+    </td>
+    <td>{{donorService.selectedDonor?.firstName}}</td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Last Name: </strong>
+    </td>
+    <td>{{donorService.selectedDonor?.lastName}}</td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Email: </strong>
+    </td>
+    <td>{{donorService.selectedDonor?.email}}</td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Phone Number: </strong>
+    </td>
+    <td>{{donorService.selectedDonor?.phoneNumber}}</td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Gender: </strong>
+    </td>
+    <td>{{donorService.selectedDonor?.gender}}</td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Date Of Birth: </strong>
+    </td>
+    <td>{{donorService?.selectedDonor.dateOfBirth}}</td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Date added: </strong>
+    </td>
+    <td>{{donorService.selectedDonor?.dateAdded}}</td>
+  </tr>
+</table>
+<hr>
+<h3 class="text-center text-info">Donations</h3>
+<table class="table table-sm table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Organisation</th>
+      <th>Story</th>
+      <th>Amount</th>
+      <th>Matched Amount</th>
+      <th>Type</th>
+      <th>Points Company</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <tr *ngFor="let donation of donorService.selectedDonor?.donations">
+      <td>{{donation?.id}}</td>
+      <td>{{donation?.dateAdded}}</td>
+      <td>{{donation?.story?.organisation?.name}}</td>
+      <td>{{donation?.donor?.firstName}} {{donation?.donor?.lastName}}</td>
+      <td>{{donation?.story?.description}}</td>
+      <td>{{donation?.amount}}</td>
+      <td>{{donation?.matchedAmount}}</td>
+      <td>{{donation?.type}}</td>
+      <td>{{donation?.pointsCompany?.name}}</td>
+    </tr>
+  </tbody>
+</table>

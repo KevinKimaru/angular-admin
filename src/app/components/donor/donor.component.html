@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <h1 class="jumbotron text-white">
+    Donors
+  </h1>
+</div>
+<div class="row">
+  <!-- <div class="col-sm-4">
+    <app-cdonor></app-cdonor>
+  </div> -->
+  <div class="col-sm-8">
+    <app-donor-list></app-donor-list>
+  </div>
+</div>
+<br>
+<hr>
+<div class="col-sm-8" *ngIf="donorService.selectedDonor.id">
+  <app-donor-details></app-donor-details>
+</div>

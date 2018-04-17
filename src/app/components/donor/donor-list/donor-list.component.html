@@ -1,0 +1,34 @@
+<h2 class="text-center text-success">All Donors</h2>
+<table class="table table-sm table-hover" id="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Date of Birth</th>
+      <th>Gender</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let donor of donorService.donorList">
+      <td>{{donor?.id}}</td>
+      <td>{{donor?.firstName}}</td>
+      <td>{{donor?.lastName}}</td>
+      <td>{{donor?.email}}</td>
+      <td>{{donor?.phoneNumber}}</td>
+      <td>{{donor?.dateOfBirth}}</td>
+      <td>{{donor?.gender}}</td>
+      <td>
+        <a class="btn" (click)="showForEdit(donor)">
+          <i class="fa fa-pencil-square-o"></i>Edit
+        </a>
+        <a class="btn text-danger" (click)="onDelete(donor.id)">
+          <i class="fa fa-trash-o"></i>Del
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

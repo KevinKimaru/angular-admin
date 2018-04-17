@@ -1,0 +1,36 @@
+<h2 class="text-center text-success">All Stories</h2>
+<table class="table table-sm table-hover" id="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Organisation</th>
+      <th>Target Amount</th>
+      <th>Current Amount</th>
+      <th>Date added</th>
+      <th>Time Allocated</th>
+      <th>Status</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let story of storyService.storyList">
+      <td>{{story?.id}}</td>
+      <td><textarea class="form-control" name="" id="" cols="100" rows="2" readonly>{{story?.description}}</textarea></td>
+      <td>{{story?.organisation?.name}}</td>
+      <td>{{story?.targetAmount}}</td>
+      <td>{{story?.currentAmount}}</td>
+      <td>{{story?.dateAdded}}</td>
+      <td>{{story?.timeAllocated}}</td>
+      <td>{{story?.status}}</td>
+      <td>
+        <a class="btn" (click)="showForEdit(story)">
+          <i class="fa fa-pencil-square-o"></i>Edit
+        </a>
+        <a class="btn text-danger" (click)="onDelete(story.id)">
+          <i class="fa fa-trash-o"></i>Delete
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

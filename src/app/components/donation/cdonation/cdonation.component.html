@@ -1,0 +1,44 @@
+<h2 class="text-center text-success">Donate</h2>
+
+<div class="alert alert-danger col-sm-8" *ngIf="isFormError">
+  <p href="" class="close" data-dismiss="alert" aria-label="close">&times;</p>
+  <strong>Error!</strong>Ensure all fields are correctly filled
+</div>
+<form class="" #donationForm="ngForm" (ngSubmit)="onSubmit(donationForm)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="donationService.selectedDonation.id">
+  <div class="form-group"> 
+    <label for="story">Story</label>
+    <select id="story" class="form-control" required name="story" #story="ngModel" [(ngModel)]="donationService.selectedDonation.storyId"
+      placeholder="Story">
+      <option *ngFor="let story of storyService.storyList" value="{{story?.id}}">{{story?.description}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input id="amount" class="form-control" type="number" required name="amount" #amount="ngModel" [(ngModel)]="donationService.selectedDonation.amount"
+      placeholder="Amount">
+  </div>
+  <div class="form-group">
+    <label for="type">Type</label>
+    <select id="type" class="form-control" required name="type" #type="ngModel" [(ngModel)]="donationService.selectedDonation.type"
+      placeholder="Type">
+      <option value="0">Points</option>
+      <option value="1">Cash</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="pointsCompany">Points Company</label>
+    <select required id="pointsCompany" class="form-control" name="pointsCompany" #pointsCompany="ngModel" [(ngModel)]="donationService.selectedDonation.pointsCompanyId"
+      placeholder="Points Company">
+      <option *ngFor="let pointsCompany of pointsCompanyService.pointsCompanyList" value="{{pointsCompany?.id}}">{{pointsCompany?.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button class="btn-sm btn-info btn-block" type="submit">
+      <i class="fa fa-floppy-o"></i>Submit</button>
+  </div>
+  <div class="form-group">
+    <button class="btn-sm btn-seconadry btn-block" type="button" (click)="resetForm(donationForm)">
+      <i class="fa fa-repeat"></i>Reset</button>
+  </div>
+</form>
