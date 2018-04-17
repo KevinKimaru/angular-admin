@@ -1,4 +1,4 @@
-<h2 class="text-center text-success">Donate</h2>
+<!-- <h2 class="text-center text-success">Donate</h2>
 
 <div class="alert alert-danger col-sm-8" *ngIf="isFormError">
   <p href="" class="close" data-dismiss="alert" aria-label="close">&times;</p>
@@ -28,7 +28,8 @@
   </div>
   <div class="form-group">
     <label for="pointsCompany">Points Company</label>
-    <select required id="pointsCompany" class="form-control" name="pointsCompany" #pointsCompany="ngModel" [(ngModel)]="donationService.selectedDonation.pointsCompanyId"
+    <select required id="pointsCompany" class="form-control" name="pointsCompany"
+     #pointsCompany="ngModel" [(ngModel)]="donationService.selectedDonation.pointsCompanyId"
       placeholder="Points Company">
       <option *ngFor="let pointsCompany of pointsCompanyService.pointsCompanyList" value="{{pointsCompany?.id}}">{{pointsCompany?.name}}</option>
     </select>
@@ -41,4 +42,4 @@
     <button class="btn-sm btn-seconadry btn-block" type="button" (click)="resetForm(donationForm)">
       <i class="fa fa-repeat"></i>Reset</button>
   </div>
-</form>
+</form> -->

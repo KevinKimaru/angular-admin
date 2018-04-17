@@ -17,7 +17,7 @@ export class PointsCompanyListComponent implements OnInit {
 
   dataTable: any;
 
-  constructor(private  pointsCompanyService: PointsCompanyService, private toastr: ToastrService, 
+  constructor(public  pointsCompanyService: PointsCompanyService, private toastr: ToastrService, 
     private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {

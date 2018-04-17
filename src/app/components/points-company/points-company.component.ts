@@ -8,7 +8,7 @@ import { PointsCompanyService } from '../../services/points-company.service';
 })
 export class PointsCompanyComponent implements OnInit {
 
-  constructor(private pointsCompanyService: PointsCompanyService) { }
+  constructor(public pointsCompanyService: PointsCompanyService) { }
 
   ngOnInit() {
   }

@@ -12,7 +12,7 @@ export class ClientDonorDetailsComponent implements OnInit {
 
   dataTable: any;
 
-  constructor(private donationService: DonationService, private donorService: DonorService,
+  constructor(public donationService: DonationService, public donorService: DonorService,
      private cdr : ChangeDetectorRef) { }
 
   ngOnInit() {

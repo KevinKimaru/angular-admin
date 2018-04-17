@@ -17,7 +17,7 @@ export class DonorListComponent implements OnInit {
 
   dataTable: any;
 
-  constructor(private donorService: DonorService, private toastr: ToastrService, 
+  constructor(public donorService: DonorService, private toastr: ToastrService, 
     private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {

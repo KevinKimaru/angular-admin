@@ -8,7 +8,7 @@ import { FundingService } from '../../services/funding.service';
 })
 export class FundingComponent implements OnInit {
 
-  constructor(private fundingService: FundingService) { }
+  constructor(public fundingService: FundingService) { }
 
   ngOnInit() {
   }

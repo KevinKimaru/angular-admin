@@ -12,7 +12,7 @@ import { BrandService } from '../../../services/brand.service';
 })
 export class CbrandComponent implements OnInit {
 
-  constructor(private brandService:BrandService, private toastr: ToastrService) { }
+  constructor(public brandService:BrandService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.resetForm();

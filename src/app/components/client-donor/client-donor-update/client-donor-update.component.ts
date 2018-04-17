@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ClientDonorUpdateComponent implements OnInit {
 
-  constructor(private donorService: DonorService, private toastr: ToastrService,
+  constructor(public donorService: DonorService, private toastr: ToastrService,
     private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {

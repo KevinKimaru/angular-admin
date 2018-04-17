@@ -14,7 +14,7 @@ export class ListUploadComponent implements OnInit {
   showFile = false
   fileUploads: Observable<string[]>
 
-  constructor(private storyService: StoryService) { }
+  constructor(public storyService: StoryService) { }
 
   ngOnInit() {
     

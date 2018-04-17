@@ -12,7 +12,7 @@ import { OrganisationService } from '../../../services/organisation.service';
 })
 export class CorganisationComponent implements OnInit {
 
-  constructor(private organisationService: OrganisationService, private toastr: ToastrService) { }
+  constructor(public organisationService: OrganisationService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.resetForm();

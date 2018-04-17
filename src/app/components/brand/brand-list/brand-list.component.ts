@@ -17,7 +17,7 @@ export class BrandListComponent implements OnInit {
 
   dataTable: any;
 
-  constructor(private brandService: BrandService, private toastr: ToastrService,
+  constructor(public brandService: BrandService, private toastr: ToastrService,
    private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {

@@ -8,7 +8,7 @@ import { OrganisationService } from '../../../services/organisation.service';
 })
 export class OrganisationDetailsComponent implements OnInit {
 
-  constructor(private organisationService: OrganisationService) { }
+  constructor(public organisationService: OrganisationService) { }
 
   ngOnInit() {
   }

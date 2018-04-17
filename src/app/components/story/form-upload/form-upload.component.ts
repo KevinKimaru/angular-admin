@@ -13,7 +13,7 @@ export class FormUploadComponent implements OnInit {
   currentFileUpload: File
   progress: { percentage: number } = { percentage: 0 }
 
-  constructor(private storyService: StoryService) { }
+  constructor(public storyService: StoryService) { }
 
   ngOnInit() {
   }

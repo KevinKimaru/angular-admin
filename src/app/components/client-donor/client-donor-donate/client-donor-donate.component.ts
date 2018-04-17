@@ -16,10 +16,10 @@ export class ClientDonorDonateComponent implements OnInit {
 
   isFormError: boolean = false;
 
-  constructor(private donationService: DonationService,
-    private pointsCompanyService: PointsCompanyService,
-    private storyService: StoryService,
-    private donorService: DonorService,
+  constructor(public donationService: DonationService,
+    public pointsCompanyService: PointsCompanyService,
+    public storyService: StoryService,
+    public donorService: DonorService,
     private toastr: ToastrService) { }
 
   ngOnInit() {

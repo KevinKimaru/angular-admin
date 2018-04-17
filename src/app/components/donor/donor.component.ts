@@ -9,7 +9,7 @@ import { DonorService } from '../../services/donor.service';
 })
 export class DonorComponent implements OnInit {
 
-  constructor(private donorService: DonorService) { }
+  constructor(public donorService: DonorService) { }
 
   ngOnInit() {
   }

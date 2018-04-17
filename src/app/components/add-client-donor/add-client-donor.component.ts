@@ -11,7 +11,7 @@ import { DonorService } from '../../services/donor.service';
 })
 export class AddClientDonorComponent implements OnInit {
 
-  constructor(private donorService: DonorService, private toastr: ToastrService) { }
+  constructor(public donorService: DonorService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.resetForm();

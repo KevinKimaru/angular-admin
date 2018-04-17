@@ -8,7 +8,7 @@ import { StoryService } from '../../../services/story.service';
 })
 export class StoryDetailsComponent implements OnInit {
 
-  constructor(private storyService: StoryService) { }
+  constructor(public storyService: StoryService) { }
 
   ngOnInit() {
   }

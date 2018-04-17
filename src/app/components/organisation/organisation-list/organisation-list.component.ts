@@ -17,7 +17,7 @@ export class OrganisationListComponent implements OnInit {
 
   dataTable: any;
 
-  constructor(private organisationService: OrganisationService, private toastr: ToastrService, 
+  constructor(public organisationService: OrganisationService, private toastr: ToastrService, 
     private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {

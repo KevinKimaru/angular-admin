@@ -12,7 +12,7 @@ export class DetailsUploadComponent implements OnInit {
 
   @Input() fileUpload: string;
 
-  constructor(private storyService: StoryService, private toastr: ToastrService) { }
+  constructor(public storyService: StoryService, private toastr: ToastrService) { }
 
   ngOnInit() {
   }

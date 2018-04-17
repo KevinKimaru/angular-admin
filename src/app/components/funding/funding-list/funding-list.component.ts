@@ -17,7 +17,7 @@ export class FundingListComponent implements OnInit {
 
   dataTable: any;
 
-  constructor(private fundingService: FundingService, private toastr: ToastrService,
+  constructor(public fundingService: FundingService, private toastr: ToastrService,
     private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {

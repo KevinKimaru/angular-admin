@@ -17,7 +17,7 @@ export class StoryListComponent implements OnInit {
 
   dataTable: any;
 
-  constructor(private storyService: StoryService, private toastr: ToastrService, 
+  constructor(public storyService: StoryService, private toastr: ToastrService, 
     private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {

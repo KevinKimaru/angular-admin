@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   isLoginError: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(public authService: AuthService, private router: Router) {
 
   }
 

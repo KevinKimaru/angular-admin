@@ -12,7 +12,8 @@ import { BrandService } from '../../../services/brand.service';
 })
 export class CfundingComponent implements OnInit {
 
-  constructor(private fundingService: FundingService, private brandService: BrandService, private toastr: ToastrService) { }
+  constructor(public fundingService: FundingService,
+     public brandService: BrandService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.brandService.getBrands();

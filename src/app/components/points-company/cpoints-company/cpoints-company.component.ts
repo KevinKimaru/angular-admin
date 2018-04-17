@@ -11,7 +11,7 @@ import { PointsCompanyService } from '../../../services/points-company.service';
 })
 export class CpointsCompanyComponent implements OnInit {
 
-  constructor(private pointsCompanyService:PointsCompanyService, private toastr: ToastrService) { }
+  constructor(public pointsCompanyService:PointsCompanyService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.resetForm();

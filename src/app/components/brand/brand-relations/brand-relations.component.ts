@@ -8,7 +8,7 @@ import { BrandService } from '../../../services/brand.service';
 })
 export class BrandRelationsComponent implements OnInit {
 
-  constructor(private brandService: BrandService) { }
+  constructor(public brandService: BrandService) { }
 
   ngOnInit() {
   }

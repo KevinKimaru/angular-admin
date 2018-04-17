@@ -13,7 +13,8 @@ import { Organisation } from '../../../model/organisation.model';
 })
 export class CstoryComponent implements OnInit {
 
-  constructor(private storyService: StoryService, private organisationService: OrganisationService, private toastr: ToastrService) { }
+  constructor(public storyService: StoryService,
+     public organisationService: OrganisationService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.organisationService.getOrganisations();
