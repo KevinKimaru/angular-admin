@@ -1,4 +1,4 @@
-<!-- <ul class="nav nav-tabs" routerLinkActive="active">
+<ul class="nav nav-tabs" routerLinkActive="active">
   <li class="nav-item" *ngIf="authService.isAdmin()">
     <a class="nav-link" routerLink="brand">Brands</a>
   </li>
@@ -32,42 +32,8 @@
   <li class="nav-item" *ngIf="!authService.isLoggedIn()">
       <a class="nav-link text-info" (click)="login()">Login</a>
     </li>
-</ul> -->
-
-<ul class="nav nav-tabs" routerLinkActive="active">
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link" routerLink="brand">Brands</a>
-  </li>
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link" routerLink="donation">Donations</a>
-  </li>
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link" routerLink="donor">Donors</a>
-  </li>
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link" routerLink="funding">Fundings</a>
-  </li>
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link" routerLink="organisation">Organisations</a>
-  </li>
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link" routerLink="points-company">Points Companies</a>
-  </li>
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link" routerLink="story">Stories</a>
-  </li> 
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link" routerLink="client-donor">Client | Donor</a>
-  </li>
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link" routerLink="add-client-donor">Client | Add Donor</a>
-  </li>
-  <li class="nav-item" *ngIf="authService.isLoggedIn()">
-    <a class="nav-link text-danger" (click)="logout()">Logout</a>
-  </li>
-  <li class="nav-item" *ngIf="!authService.isLoggedIn()">
-      <a class="nav-link text-info" (click)="login()">Login</a>
-    </li>
 </ul>
+
+
 
 <router-outlet></router-outlet>
